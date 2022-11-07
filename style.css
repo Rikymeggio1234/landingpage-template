@@ -1,0 +1,118 @@
+body, html {
+    position: relative;
+    height: 100%
+}
+
+.nav-link{
+    font-size: larger !important;
+}
+
+.nav-pills .nav-link.active, 
+.nav-pills .show>.nav-link,
+.nav-pills .nav-link.active{
+    background-color: #000000;
+    color: white;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, 
+.navbar-light .navbar-nav .nav-link.active, 
+.navbar-light .navbar-nav .nav-link.show, 
+.navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+}
+
+.right-navbar{
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+header{
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.head-banner{
+    background-color: #848484;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-image: url(image/header-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.section-icons{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.bi{
+    font-size: 60px;
+    width: 1em;
+    height: 1em;
+}
+
+.section-imagines .imagine{
+    min-height: 30rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.section-imagines .text{
+    padding: 3rem;
+}
+
+.single-review>img{
+    width: 200px;
+    height: 200px;
+}
+
+.reviews{
+    padding-top: 7rem;
+    padding-bottom: 7rem;  
+}
+
+.newsletter{
+    background-color: #848484;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background-image: url(image/header-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+footer{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.social-icon{
+    font-size: 30px;
+    width: 1em;
+    height: 1em;
+}
+
+.list-inline-item a{
+    color: black;
+}
+
+
+@media screen and (min-width: 768px){
+    .head-banner{
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+    
+    .section-imagines .text{
+        padding: 7rem;
+    }
+
+}

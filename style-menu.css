@@ -1,0 +1,131 @@
+/*sezioni del menù*/
+a{
+    color: white;
+    font-size: 30px;
+}
+.header{
+    background-color: lightskyblue;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    border-radius: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none; /*per togliere i simboli delle liste*/
+    overflow: hidden; /*per far si che niente esca*/
+    background-color: lightskyblue;
+}   
+.header ul a{
+    display: block; /*per dare la possibilità di cliccare su qualsiasi parte della barra di navigazione*/
+    /*border-right: 1px solid white; /*se block è attivato allora la linea bianca sarà una unica infondo alla barra di navigazione*/
+    padding: 20px; 
+    text-decoration: none; /*per togliere la sottolineatura*/
+}
+.header ul .tipi-di-layout{
+    display: block; /*per dare la possibilità di cliccare su qualsiasi parte della barra di navigazione*/
+    /*border-right: 1px solid white; /*se block è attivato allora la linea bianca sarà una unica infondo alla barra di navigazione*/
+    padding: 20px;
+    text-decoration: none; /*per togliere la sottolineatura*/
+    color: white;
+    
+}
+
+
+/*comportamenti del menù*/
+.header ul a:hover{ /*funzione solo per i dispositivi che hanno un cursore(mouse)*/
+    background-color: white;
+    color: lightskyblue;
+}
+.header .logo{
+    float: left; /*per essere sicuri che sarà sempre a sinistra*/
+    font-size: 25px;
+    padding: 10px 20px;
+}
+.header .menu{
+    clear: both; /*pulisce tutti i comportamenti di prima quindi farà si che il menù non sarà più più avanti del logo ma sotto*/
+    max-height: 0;
+    transition: max-height .2s ease-out; /*manderà a video il menù in 0.2 secondi*/
+}
+.header .menu-icon{
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+.header .menu-icon .nav-icon{
+    background-color: white;
+    display: block;
+    width: 18px;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+}
+
+
+/*menù responsive per mobile*/
+.header .menu-icon .nav-icon::before,/*per fare l'hamburger*/
+.header .menu-icon .nav-icon::after{
+    background-color: white;
+    content: ""; /*vuoto perchè tanto si costruisce la altezza e la larghezza*/
+    display: block;
+    width: 100%; /*fa riferimento a .header .menu-icon .nav-icon*/
+    height: 100%; /*fa riferimento a .header .menu-icon .nav-icon*/
+    transition: all .2s ease-out;
+    position: absolute; /*orenderà la transition relative di .header .menu-icon .nav-icon*/
+    top: 5px;   
+}
+.header .menu-icon .nav-icon::before{
+    top: 5px;
+}
+.header .menu-icon .nav-icon::after{
+    top: -5px;
+}
+.header .menu-btn{ /*per togliere la checkbox*/
+    display: none;
+}
+.header .menu-btn:checked ~ .menu{/*per far scendere il menù a cascata quando clicco sull'hamburger*/
+     max-height: 600px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{/*per far apparire la x quando scende il menù a cascata e far sparire l'hamburger*/
+    background-color: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+/*menù responsive per tablet e pc*/
+@media (min-width: 48em) {
+    .header li{
+        float: left;
+    }
+
+    .header li a{
+        padding: 20px 30px;
+    }
+
+    .header .menu{
+        clear: none;
+        float: right;
+        max-height: 0;
+    }
+
+    .header .menu-icon{
+        display: none;
+    }
+}
+
+@media (min-width: 49em){
+    .header .menu{
+        max-height: 240px;
+    }
+}
